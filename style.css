@@ -1,0 +1,711 @@
+/* Basic styling for the page */
+.all {
+    background-color: #0f0f0f00;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at 50% 50%, 
+                rgba(251, 79, 20, 0.25) 10%, 
+                rgba(19, 24, 27, 1) 60%);
+    background-color: #13181b;
+    background-attachment: fixed; /* Keeps the background static while scrolling */
+    height: 100vh;
+    overflow-y: auto; /* Allows vertical scrolling */
+    overflow-x: hidden; /* Restricts horizontal scrolling */
+}
+
+/* Custom scrollbar styling */
+/* Custom Scrollbar Styling for Google Chrome */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(19, 24, 27, 1); /* Dark background for the track */
+    border-radius: 5px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(251, 79, 20, 0.5); /* Orange color for the thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+    border: 2px solid rgba(19, 24, 27, 1); /* Adds spacing between thumb and track */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(251, 79, 20, 0.8); /* Darker orange on hover */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgba(251, 79, 20, 1); /* Bright orange when active (clicked) */
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    margin-top: 10px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 690px;
+    border-radius: 49px;
+    border: 1px solid rgba(251, 79, 20, 0.29);
+    box-shadow: 0 1px 25px rgba(251, 79, 20, 0.43);
+    position: fixed;
+    animation: slideDown 1.2s ease-out;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav #logo {
+    margin-right: 26px;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.btn-book {
+    margin-left: 32px;
+    padding: 10px 20px;
+    color: #fb4f14;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, color 0.5s, background-color 0.5s;
+}
+
+.btn-book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    border: 2px solid rgb(255, 255, 255);
+    animation: border-glow 2s infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.btn-book:hover::before {
+    animation: none; /* Stops the animation on hover */
+    box-shadow: none; /* Removes shadow effect when animation stops */
+    border: 2px solid #fb4f14;
+}
+
+
+@keyframes border-glow {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgb(255, 255, 255), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+
+.btn-book:hover {
+    color: #120f0f;
+    background-color: #fb4f14;
+    box-shadow: 2px 2px 14px rgba(251, 79, 20, 0.5);
+    border: 1px solid rgba(251, 79, 20, 0.4);
+}
+
+/* Keyframe animation for sliding down */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframe animation for sliding up */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* sec1 starts here */
+.sec1a {
+    
+}
+
+.sec1a-up, .sec1a-mid, .sec1a-down {
+    display: flex;
+    justify-content: center;
+}
+    
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.9); /* Slightly smaller at the start */
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05); /* Slightly larger at midpoint */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Final scale */
+    }
+}
+
+.sec1a-up-p {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Roboto;
+    margin-bottom: 0;
+    padding: 94px;
+    padding-bottom: 0px;
+    font-size: 78px;
+    font-weight: bold;
+    color: #f9f8ef;
+    position: relative;
+    animation: fadeInZoom 1.2s ease-out forwards;
+}
+
+
+
+.sec1a-mid-p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Roboto;
+    margin-top: 0;
+    font-size: 40px;
+    color: #f9f8efb3;
+    font-weight: 100;
+    position: relative;
+    animation: slideUp 1s ease-out; /* Apply the slide-up animation */
+}
+
+.sec1a-down-left {
+    text-decoration: none;
+    margin-right: 82px;
+    padding: 15px 50px;
+    background-color: #ffffff00;
+    color: #f9f8efde;
+    height: 30px;
+    border: 2px solid #f9f8efde;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    position: relative;
+    animation: slideUp 1s ease-out; /* Apply the slide-up animation */
+}
+
+.sec1a-down-right {
+    text-decoration: none;
+    margin-left: 39px;
+    padding: 15px 50px;
+    color: #fb4f14;
+    border: none;
+    height: 34px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: box-shadow 0.3s ease, color 0.5s, background-color 0.5s;
+    box-shadow: 9.6px 9.6px 28.8px rgba(0, 0, 0, 0.44);
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: slideUp 1s ease-out;
+}
+.sec1a-down-right::after {
+    content: "";
+    position: absolute;
+    right: 24.2px;
+    opacity: 0;
+    font-size: 34px;
+    transition: opacity 0.3s ease;
+    transform: translate(12px, -8px);
+}
+.sec1a-down-right:hover {
+    color: #120f0f;
+    background-color: #fb4f14;
+    box-shadow: 2px 2px 14px rgba(251, 79, 20, 0.5);
+}
+.sec1a-down-right:hover::after {
+    opacity: 1; /* Show the arrow on hover */
+}
+
+/* Styling for the "Or Contact Through" heading */
+.sec1a-down-u {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    color: #f9f8ef;
+    font-size: 24px;
+    font-weight: 100;
+    margin-top: 40px;
+    animation: slideUp 1s ease-out;
+}
+
+/* Flex styling for social media icons */
+.sec1a-down-s {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 20px; /* Space above the icons */
+    animation: slideUp 1s ease-out;
+}
+/* Common styling for all social media icons */
+.sec1a-down-s img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin: 0 22px; /* Adds 15px space on left and right of each icon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hover effect */
+.sec1a-down-s a:hover img {
+    transform: scale(1.1); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(251, 79, 20, 0.5); /* Glow effect on hover */
+}
+
+/* Keyframe animation */
+@keyframes slideIn {
+    0% {
+        width: 0%; /* Start with width 0% */
+        margin-left: 100%; /* Start off-screen from the right */
+    }
+    100% {
+        width: 100%; /* End with full width */
+        margin-left: 0%; /* Move it to the normal position */
+    }
+}
+.sec1-hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #13181b 20%, /* Start color */ #cdcdcd 50%, /* Middle color */ #13181b 80%);
+    margin: 40px 0;
+    width: 0%; /* Initially set the width to 0% */
+    animation: slideIn 2s forwards; /* Animation name and duration */
+}
+
+/* Sec1b */
+.sec1b-up {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    color: #f9f8ef;
+    font-size: 33px;
+    font-weight: 100;
+    padding-right: 3px;
+    margin: 40px 0px;
+    animation: slideUp 1s ease-out;
+}
+
+.sec1b-down {
+    display: flex; 
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Brands logos slider*/
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.sec1b-down-b{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 80%;
+    position: relative;
+}
+
+.sec1b-down-b:before, .sec1b-down-b:after{
+    position: absolute;
+    top: 0;
+    width: 10vw;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.sec1b-down-b:before{
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #13181b);
+    
+}
+
+.sec1b-down-b:after{
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #13181b);
+}
+
+.sec1b-down-b:hover .brand-slide{
+    animation-play-state: paused;
+}
+
+.brand-slide{
+    display: inline-block;
+    animation: 38s slide infinite linear;
+}
+
+.brand-slide img {
+    height: 6vw; /* Adjust for smaller logo size */
+    margin: 0 1.5vw;
+    transition: transform 0.3s ease; /* Adds a smooth transition effect */
+}
+
+.brand-slide img:hover {
+    transform: scale(1.2); /* Scale up by 1.1 on hover */
+}
+
+/* Styling for sec1c section */
+.sec1c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw 0; /* Adjust padding as desired */
+    background: transparent;
+}
+
+/* Modify sec1c-video to set its initial position */
+.sec1c-video {
+    max-width: 78%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transform: scale(0.8); /* Start with a smaller size */
+    transition: transform 0.2s ease-out; /* Smooth transition for each scroll event */
+}
+
+/* sec2 */
+.sec2 {
+
+}
+
+.sec2a {
+
+}
+
+.sec2a-u {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    color: #f9f8ef;
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
+.sec2a-p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Roboto;
+    color: #f9f8ef;
+    font-size: 24px;
+    font-weight: 100;
+    margin: 5px 0px;
+    margin-bottom: 40px;
+}
+        .sec2a-b {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+/* Container for centering and width control */
+.video-container,
+.reel-container {
+    width: 73%;
+    max-width: 900px; /* Limit maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Container for centering and width control */
+.video-container {
+    width: 100%;
+    max-width: 1877px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Grid container for videos */
+.video-grid {
+    display: grid;
+    width: 72%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+    margin-top: 20px;
+    padding: 0;
+    justify-items: center;
+}
+
+/* Style individual iframes */
+.video-grid iframe {
+    width: 100%;
+    max-width: 643px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+
+/* Reel Container with added spacing from the video section */
+.reel-container {
+    width: 100%;
+    max-width: 1877px;
+    justify-content: center;
+    display: flex;
+    margin: 40px auto 0;
+}
+
+/* Grid for reels */
+.reel-grid {
+    display: grid;
+    justify-items: center;
+    width: 66%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4vw;
+    padding: 0 15px;
+}
+
+/* Individual reel styling */
+.reel-grid iframe {
+    width: 100%;
+    max-width: 361px;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .video-grid,
+    .reel-grid {
+        grid-template-columns: 1fr; /* Stack videos on smaller screens */
+    }
+    .sec2a-b {
+        gap: 1%;
+    }
+}
+
+.sec3 {
+    max-width: 1877px;
+    margin: 0 auto;
+    padding: 40px 0;
+    color: #f9f8ef;
+    text-align: center;
+}
+
+.sec3a {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.sec3a-container {
+    display: flex;
+    width: 63%;
+    justify-content: space-between;
+}
+
+.sec3a-u {
+    font-family: Roboto, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: left;
+    color: #f9f8ef;
+    margin: 0;
+}
+
+.sec3a-p {
+    font-family: Roboto, sans-serif;
+    font-size: 42px;
+    text-align: right;
+    padding-top: 0.3vw;
+    color: #f9f8efb3;
+    font-weight: 100;
+    margin: 0;
+}
+
+.sec3b {
+    display: flex;
+    justify-content: center;
+    margin: 28px auto;
+}
+
+.sec3b-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.faqs {
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e9e1de;
+    margin: 10px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Add plus sign after each FAQ heading */
+.faqs::after {
+    content: '+';
+    font-size: 24px;
+    color: #f9f8ef;
+    position: absolute;
+    right: -30px;
+    transition: transform 0.3s ease, content 0.3s ease;
+}
+
+/* Rotate and change plus sign to cross when FAQ item is active */
+.active .faqs::after {
+    content: '×';               /* Change the content to '×' */
+    transform: rotate(90deg);   /* Rotate by 45 degrees */
+    color: #e74c3c;             /* Optional: change color for emphasis */
+}
+
+
+.answer {
+    display: none;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    color: #f9f8efb3;
+    margin: 5px 0 10px;
+    line-height: 1.6;
+}
+
+.faq-item.active .answer {
+    display: block; /* Show answer when FAQ item is active */
+}
+
+.sec3-hr {
+    width: 60%;
+    margin: 0px auto;
+    border: none;
+    border-top: 1px solid #f9f8efe3;
+    opacity: 0.7;
+    transition: width 0.3s ease;
+}
+
+/* Expand hr width to 98% when the FAQ item is active */
+.faq-item.active .sec3-hr {
+    width: 98%; /* Expanded width */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .sec3a-container {
+        display: block;
+    }
+
+    .sec3b-container {
+        width: 90%;
+        gap: 15px;
+    }
+
+    .sec3a-u {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .sec3a-p {
+        font-size: 24px;
+        text-align: center;
+        padding-top: 2vw;
+    }
+
+    .faqs {
+        font-size: 20px;
+    }
+
+    .answer {
+        font-size: 16px;
+    }
+
+    .sec3-hr {
+        width: 80%;
+    }
+
+    /* Add plus sign after each FAQ heading */
+    .faqs::after {
+        content: '';
+        font-size: 24px;
+        color: #f9f8ef;
+        position: absolute;
+        right: -30px;
+        transition: transform 0.3s ease, content 0.3s ease;
+    }
+    
+    /* Rotate and change plus sign to cross when FAQ item is active */
+    .active .faqs::after {
+        content: '';               /* Change the content to '×' */
+        transform: rotate(90deg);   /* Rotate by 45 degrees */
+        color: #e74c3c;             /* Optional: change color for emphasis */
+    }
+}
